@@ -1,0 +1,870 @@
+/* ========================================
+   SWFU - Star Wars Fan Club Ukraine
+   style.css — єдиний стиль для всіх сторінок
+   ======================================== */
+
+/* --- CSS Змінні (кольорова схема) --- */
+:root {
+  --color-bg: #0a0a0f;
+  --color-surface: #12121a;
+  --color-card: #1a1a28;
+  --color-border: #2a2a40;
+  --color-accent: #ffe81f;      /* жовтий Star Wars */
+  --color-accent2: #4fc3f7;     /* блакитний світловий меч */
+  --color-red: #e53935;         /* червоний ситх */
+  --color-text: #e8e8f0;
+  --color-muted: #8888aa;
+  --font-display: 'Cinzel', serif;
+  --font-body: 'Rajdhani', sans-serif;
+  --radius: 6px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.6);
+  --glow-yellow: 0 0 18px rgba(255,232,31,0.4);
+  --glow-blue:   0 0 18px rgba(79,195,247,0.4);
+}
+
+/* --- Скидання та базові стилі --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Блок 3: Універсальний селектор * + дочірні селектори + псевдокласи */
+
+/* Псевдоклас :root вже використано вище */
+/* Псевдоклас :not() */
+p:not(.intro-lead) {
+  line-height: 1.7;
+}
+
+/* Дочірній селектор > */
+.news-grid > .news-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.news-grid > .news-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 32px rgba(255,232,31,0.15);
+}
+
+/* Псевдоклас :nth-child */
+.wiki-table tbody tr:nth-child(even) {
+  background: rgba(255,232,31,0.04);
+}
+.wiki-table tbody tr:nth-child(odd) {
+  background: rgba(79,195,247,0.03);
+}
+
+/* Псевдоклас :first-child / :last-child */
+.breadcrumb > span:first-child::before {
+  content: '';
+}
+.breadcrumb > span:last-child {
+  color: var(--color-accent);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 17px;
+  min-height: 100vh;
+  /* Блок 3: фонова текстура (зірки) */
+  background-image:
+    radial-gradient(1px 1px at 10% 20%, rgba(255,255,255,0.15) 0%, transparent 100%),
+    radial-gradient(1px 1px at 30% 60%, rgba(255,255,255,0.10) 0%, transparent 100%),
+    radial-gradient(1px 1px at 55% 15%, rgba(255,255,255,0.12) 0%, transparent 100%),
+    radial-gradient(1px 1px at 75% 45%, rgba(255,255,255,0.08) 0%, transparent 100%),
+    radial-gradient(1px 1px at 90% 80%, rgba(255,255,255,0.14) 0%, transparent 100%),
+    radial-gradient(1px 1px at 20% 85%, rgba(255,255,255,0.09) 0%, transparent 100%);
+  background-attachment: fixed;
+}
+
+/* --- Типографіка --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+}
+
+h1 { font-size: 2.4rem; color: var(--color-accent); text-shadow: var(--glow-yellow); }
+h2 { font-size: 1.8rem; color: var(--color-accent); }
+h3 { font-size: 1.3rem; color: var(--color-accent2); }
+h4 { font-size: 1.1rem; color: var(--color-text); }
+h5 { font-size: 1rem;   color: var(--color-muted); }
+h6 { font-size: 0.9rem; color: var(--color-muted); font-style: italic; }
+
+p { margin-bottom: 1em; }
+
+a {
+  color: var(--color-accent2);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover { color: var(--color-accent); text-decoration: underline; }
+
+/* Псевдоклас :visited */
+a:visited { color: #b39ddb; }
+
+/* --- ШАПКА (header) --- */
+.site-header {
+  background: linear-gradient(180deg, #000 0%, var(--color-surface) 100%);
+  border-bottom: 2px solid var(--color-accent);
+  box-shadow: var(--glow-yellow);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.site-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 40px;
+  height: 40px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 1rem;
+  color: #000;
+  font-weight: 700;
+  box-shadow: var(--glow-yellow);
+}
+
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--color-accent);
+  text-shadow: var(--glow-yellow);
+  letter-spacing: 0.12em;
+}
+
+/* --- НАВІГАЦІЯ з випадаючим меню (Блок 2) --- */
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 4px;
+}
+
+.site-nav > ul > li {
+  position: relative;
+}
+
+.site-nav > ul > li > a {
+  display: block;
+  padding: 8px 16px;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  border-radius: var(--radius);
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.site-nav > ul > li > a:hover,
+.site-nav > ul > li > a.active {
+  background: rgba(255,232,31,0.12);
+  color: var(--color-accent);
+}
+
+/* Стрілка для підменю */
+.site-nav > ul > li.has-dropdown > a::after {
+  content: ' ▾';
+  font-size: 0.7rem;
+}
+
+/* Випадаюче підменю */
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  min-width: 180px;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-top: 2px solid var(--color-accent);
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: var(--shadow);
+  z-index: 999;
+  list-style: none;
+}
+
+.dropdown li a {
+  display: block;
+  padding: 10px 16px;
+  color: var(--color-text);
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+  text-decoration: none;
+}
+
+.dropdown li a:hover {
+  background: rgba(255,232,31,0.08);
+  color: var(--color-accent);
+}
+
+/* Показати підменю при кліку — через JS клас .open */
+.site-nav > ul > li.has-dropdown.open .dropdown {
+  display: block;
+}
+
+/* Стрілка повертається коли відкрито */
+.site-nav > ul > li.has-dropdown.open > a::after {
+  content: ' ▴';
+}
+
+/* --- ХЛІБНІ КРИХТИ --- */
+.breadcrumb {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 24px;
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.breadcrumb > span::before {
+  content: '/ ';
+  margin-right: 6px;
+  color: var(--color-border);
+}
+
+/* --- HERO СЕКЦІЯ --- */
+.hero {
+  position: relative;
+  overflow: hidden;
+  /* Блок 3: градієнт на hero */
+  background: linear-gradient(135deg,
+    #000 0%,
+    #0d0d1a 30%,
+    #1a0a00 60%,
+    #000 100%);
+  border-bottom: 1px solid var(--color-border);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+/* Блок 3: Псевдоелемент з градієнтним овалом */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+  height: 300px;
+  background: radial-gradient(ellipse,
+    rgba(255,232,31,0.08) 0%,
+    rgba(255,232,31,0.02) 50%,
+    transparent 70%);
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-eyebrow {
+  font-size: 0.8rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 16px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-lead {
+  font-size: 1.15rem;
+  color: var(--color-muted);
+  max-width: 560px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+/* Кнопки */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: var(--radius);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border: none;
+  transition: all 0.25s;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: var(--color-accent);
+  color: #000;
+  box-shadow: var(--glow-yellow);
+}
+
+.btn-primary:hover {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 0 28px rgba(255,232,31,0.6);
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--color-accent2);
+  border: 1px solid var(--color-accent2);
+}
+
+.btn-outline:hover {
+  background: rgba(79,195,247,0.1);
+  box-shadow: var(--glow-blue);
+  text-decoration: none;
+}
+
+/* --- ОСНОВНИЙ КОНТЕНТ --- */
+.site-main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+/* Макет з aside */
+.content-with-sidebar {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 32px;
+  align-items: start;
+}
+
+/* --- СЕКЦІЇ --- */
+.section {
+  margin-bottom: 48px;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  margin-bottom: 24px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.section-title::before {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 1.5rem;
+  background: var(--color-accent);
+  border-radius: 2px;
+  box-shadow: var(--glow-yellow);
+}
+
+/* --- КАРТКИ НОВИН --- */
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.news-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  /* Блок 3: тінь */
+  box-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+.news-card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+  /* Блок 3: прозорість + градієнт */
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.news-card:hover .news-card-img {
+  opacity: 1;
+}
+
+/* Блок 3: градієнт поверх зображення через псевдоелемент */
+.news-card-media {
+  position: relative;
+  overflow: hidden;
+}
+
+.news-card-media::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 60px;
+  background: linear-gradient(transparent, var(--color-card));
+  pointer-events: none;
+}
+
+.news-card-body {
+  padding: 16px;
+}
+
+.news-card-tag {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 2px;
+  background: rgba(255,232,31,0.12);
+  color: var(--color-accent);
+  margin-bottom: 8px;
+}
+
+.news-card h3 {
+  font-size: 1rem;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.news-card p {
+  font-size: 0.9rem;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+}
+
+.news-card-date {
+  font-size: 0.78rem;
+  color: var(--color-border);
+}
+
+/* --- ASIDE (бічна панель) --- */
+.site-aside {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 20px;
+}
+
+.aside-block {
+  margin-bottom: 28px;
+}
+
+.aside-block:last-child {
+  margin-bottom: 0;
+}
+
+.aside-title {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 14px;
+}
+
+/* Списки */
+ul.aside-list {
+  list-style: none;
+  padding: 0;
+}
+
+ul.aside-list li {
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  font-size: 0.9rem;
+}
+
+ul.aside-list li a {
+  color: var(--color-text);
+  font-size: 0.88rem;
+}
+
+ul.aside-list li a:hover {
+  color: var(--color-accent);
+}
+
+/* Нумерований список */
+ol.ranked-list {
+  padding-left: 20px;
+  font-size: 0.9rem;
+  color: var(--color-text);
+}
+
+ol.ranked-list li {
+  padding: 5px 0;
+  color: var(--color-muted);
+}
+
+ol.ranked-list li strong {
+  color: var(--color-text);
+}
+
+/* Маркований список, вкладений у нумерований */
+ol.ranked-list li ul {
+  list-style: disc;
+  padding-left: 18px;
+  margin-top: 4px;
+}
+
+ol.ranked-list li ul li {
+  font-size: 0.82rem;
+  color: var(--color-muted);
+  padding: 2px 0;
+}
+
+/* --- ARTICLE --- */
+.article-block {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 20px;
+  /* Блок 3: тінь на картках */
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4);
+}
+
+.article-block:hover {
+  border-color: rgba(255,232,31,0.3);
+  /* Блок 3: тінь при ховері */
+  box-shadow: 0 4px 24px rgba(255,232,31,0.08);
+  transition: all 0.3s;
+}
+
+/* --- ТАБЛИЦЯ --- */
+.wiki-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+  margin: 16px 0;
+}
+
+.wiki-table th {
+  background: rgba(255,232,31,0.1);
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 2px solid var(--color-accent);
+}
+
+.wiki-table td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--color-border);
+  vertical-align: top;
+}
+
+.wiki-table tr:hover td {
+  background: rgba(255,255,255,0.03);
+}
+
+/* --- ФОРМА (Блок 2) --- */
+.contact-form {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 32px;
+  max-width: 640px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  margin-bottom: 6px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--color-accent2);
+  box-shadow: 0 0 0 3px rgba(79,195,247,0.15);
+}
+
+/* Псевдоклас :valid / :invalid */
+.form-group input:valid:not(:placeholder-shown) {
+  border-color: #4caf50;
+}
+
+.form-group input:invalid:not(:placeholder-shown) {
+  border-color: var(--color-red);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* --- IFRAME (Блок 2) --- */
+.iframe-wrapper {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 16px 0;
+  background: #000;
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 400px;
+  border: none;
+  display: block;
+}
+
+/* --- SECTION (загальні стилі) --- */
+section.content-section {
+  padding: 32px 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+section.content-section:last-child {
+  border-bottom: none;
+}
+
+/* --- ПІДВАЛ (footer) --- */
+.site-footer {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  margin-top: 60px;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 32px;
+}
+
+.footer-brand p {
+  font-size: 0.88rem;
+  color: var(--color-muted);
+  margin-top: 12px;
+  line-height: 1.6;
+}
+
+.footer-col h5 {
+  font-family: var(--font-display);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 14px;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col ul li {
+  margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+  color: var(--color-muted);
+  font-size: 0.88rem;
+  transition: color 0.2s;
+  text-decoration: none;
+}
+
+.footer-col ul li a:hover {
+  color: var(--color-accent);
+}
+
+.footer-bottom {
+  border-top: 1px solid var(--color-border);
+  text-align: center;
+  padding: 16px 24px;
+  font-size: 0.8rem;
+  color: var(--color-muted);
+}
+
+/* --- Блок 3: Клас для зображень з градієнтом, тінню, прозорістю --- */
+.img-styled {
+  border-radius: var(--radius);
+  box-shadow:
+    0 8px 32px rgba(0,0,0,0.7),
+    0 0 24px rgba(255,232,31,0.12);
+  opacity: 0.92;
+  transition: opacity 0.3s, box-shadow 0.3s, transform 0.3s;
+  display: block;
+}
+
+.img-styled:hover {
+  opacity: 1;
+  box-shadow:
+    0 12px 48px rgba(0,0,0,0.8),
+    0 0 36px rgba(255,232,31,0.25);
+  transform: scale(1.02);
+}
+
+/* Клас для тексту з градієнтом */
+.text-gradient {
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent2) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Клас для блоку з тінню */
+.shadow-box {
+  box-shadow:
+    0 4px 16px rgba(0,0,0,0.5),
+    inset 0 1px 0 rgba(255,255,255,0.05);
+}
+
+/* --- Мітки / badges --- */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 3px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.badge-yellow { background: rgba(255,232,31,0.15); color: var(--color-accent); }
+.badge-blue   { background: rgba(79,195,247,0.15);  color: var(--color-accent2); }
+.badge-red    { background: rgba(229,57,53,0.15);   color: var(--color-red); }
+
+/* --- Форматування тексту --- */
+strong { color: var(--color-text); font-weight: 700; }
+em     { color: var(--color-accent2); font-style: italic; }
+mark   {
+  background: rgba(255,232,31,0.25);
+  color: var(--color-accent);
+  padding: 1px 4px;
+  border-radius: 2px;
+}
+
+/* --- Фон сторінки (колір + картинка через CSS) --- */
+.page-bg-alt {
+  background-color: var(--color-surface);
+}
+
+/* --- Адаптивність --- */
+@media (max-width: 900px) {
+  .content-with-sidebar {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero h1 { font-size: 2rem; }
+}
+
+@media (max-width: 600px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  .site-nav ul {
+    flex-wrap: wrap;
+  }
+
+  .hero { padding: 48px 16px; }
+  .site-main { padding: 24px 16px; }
+}
+
+
+
+/* --- ВИПРАВЛЕННЯ ДЛЯ ВИПАДАЮЧОГО МЕНЮ --- */
+
+/* 1. Робимо батьківські пункти (з класом has-dropdown) "якорями" */
+.site-nav ul li.has-dropdown {
+    position: relative !important;
+}
+
+/* 2. Налаштовуємо випадаючий список */
+.site-nav ul li .dropdown {
+    display: none; /* Ховаємо за замовчуванням */
+    position: absolute !important;
+    top: 100% !important; /* Опускаємо рівно під кнопку */
+    left: 0 !important; /* Вирівнюємо по лівому краю кнопки */
+    min-width: 220px;
+    background-color: #1a1a24; /* Темний фон */
+    padding: 10px 0;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.8);
+    border-radius: 4px;
+    z-index: 1000;
+}
+
+/* 3. Змушуємо пункти підменю йти в стовпчик, а не в рядок */
+.site-nav ul li .dropdown li {
+    display: block !important;
+    margin: 0;
+    padding: 0;
+}
+
+/* 4. Показуємо меню при наведенні */
+.site-nav ul li.has-dropdown:hover .dropdown {
+    display: block !important;
+}

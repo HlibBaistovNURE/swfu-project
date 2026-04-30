@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Енциклопедія SWFU — повна база знань про всесвіт Star Wars. Персонажі, планети, фракції, техніка.">
+  <meta name="keywords" content="Star Wars вікі, Дарт Вейдер, Йода, Татуін, Джедаї, Ситхи, Мандалор">
+  <meta name="author" content="SWFU — Star Wars Fan Club Ukraine">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Енциклопедія — SWFU Star Wars Fan Club Ukraine">
+  <meta property="og:description" content="Повна база знань про всесвіт Star Wars українською мовою">
+  <meta property="og:type" content="website">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>Енциклопедія — SWFU Star Wars Fan Club Ukraine</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Стилі специфічні для wiki.html */
+
+    /* Блок 3: Градієнт та тінь на зображеннях wiki */
+    .char-card {
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+
+    .char-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 28px rgba(255,232,31,0.12);
+    }
+
+    .char-card-img-wrap {
+      position: relative;
+      height: 180px;
+      overflow: hidden;
+    }
+
+    .char-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      /* Блок 3: прозорість */
+      opacity: 0.8;
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .char-card:hover .char-card-img-wrap img {
+      opacity: 1;
+      transform: scale(1.05);
+    }
+
+    /* Блок 3: градієнт поверх зображення */
+    .char-card-img-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(transparent, var(--color-card));
+    }
+
+    .char-card-body {
+      padding: 16px;
+    }
+
+    .char-card-body h3 {
+      font-size: 1rem;
+      margin-bottom: 6px;
+      color: var(--color-text);
+    }
+
+    .char-card-body p {
+      font-size: 0.85rem;
+      color: var(--color-muted);
+      margin-bottom: 0;
+    }
+
+    .char-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px;
+    }
+
+    /* Блок 3: тінь на planet-card */
+    .planet-card {
+      display: flex;
+      gap: 16px;
+      padding: 16px;
+      background: var(--color-card);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius);
+      margin-bottom: 12px;
+      /* Блок 3: тінь */
+      box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+      transition: box-shadow 0.25s;
+    }
+
+    .planet-card:hover {
+      box-shadow: 0 4px 24px rgba(79,195,247,0.1);
+    }
+
+    .planet-img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      /* Блок 3: тінь на круглому зображенні */
+      box-shadow: 0 0 20px rgba(79,195,247,0.3);
+      opacity: 0.9;
+      transition: opacity 0.3s, box-shadow 0.3s;
+    }
+
+    .planet-card:hover .planet-img {
+      opacity: 1;
+      box-shadow: 0 0 30px rgba(79,195,247,0.5);
+    }
+
+    /* Блок 3: Градієнт на заголовку hero wiki */
+    .wiki-hero {
+      background: linear-gradient(135deg,
+        #000a1a 0%,
+        #001a0a 40%,
+        #0a000a 70%,
+        #000 100%);
+      padding: 48px 24px;
+      border-bottom: 1px solid var(--color-border);
+      text-align: center;
+    }
+
+    .wiki-hero h1 {
+      font-size: 2.4rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ШАПКА -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="site-logo">
+        <div class="logo-icon">SW</div>
+        <span class="logo-text">SWFU</span>
+      </a>
+
+      <!-- НАВІГАЦІЯ з випадаючим меню -->
+      <nav class="site-nav" aria-label="Головне меню">
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+
+          <li class="has-dropdown">
+            <a href="news.html">Новини</a>
+            <ul class="dropdown">
+              <li><a href="news.html#movies">Фільми та серіали</a></li>
+              <li><a href="news.html#games">Відеоігри</a></li>
+              <li><a href="news.html#merch">Мерч і колекції</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="wiki.html" class="active">Енциклопедія</a>
+            <ul class="dropdown">
+              <li><a href="#characters">Персонажі</a></li>
+              <li><a href="#planets">Планети</a></li>
+              <li><a href="#factions">Фракції</a></li>
+              <li><a href="#tech">Техніка</a></li>
+            </ul>
+          </li>
+
+          <li class="has-dropdown">
+            <a href="index.html#forum">Форум</a>
+            <ul class="dropdown">
+              <li><a href="index.html#forum">Обговорення</a></li>
+              <li><a href="index.html#forum">Пошук напарників</a></li>
+            </ul>
+          </li>
+
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Wiki Hero -->
+  <div class="wiki-hero">
+    <p class="hero-eyebrow">База знань</p>
+    <h1><span class="text-gradient">Енциклопедія SWFU</span></h1>
+    <p style="color:var(--color-muted); max-width:500px; margin:12px auto 0; font-size:1rem;">
+      Повна україномовна база знань про всесвіт Star Wars —
+      персонажі, планети, фракції та техніка.
+    </p>
+  </div>
+
+  <!-- Хлібні крихти -->
+  <nav class="breadcrumb" aria-label="Хлібні крихти">
+    <span><a href="index.html">Головна</a></span>
+    <span>Енциклопедія</span>
+  </nav>
+
+  <!-- ОСНОВНИЙ КОНТЕНТ -->
+  <main class="site-main">
+    <div class="content-with-sidebar">
+
+      <div>
+
+        <!-- ПЕРСОНАЖІ -->
+        <section class="section content-section" id="characters">
+          <h2 class="section-title">Персонажі</h2>
+
+          <div class="char-grid">
+
+            <div class="char-card">
+              <div class="char-card-img-wrap">
+                <img src="https://picsum.photos/seed/vader/300/180" alt="Дарт Вейдер" class="img-styled" width="300" height="180">
+              </div>
+              <div class="char-card-body">
+                <span class="badge badge-red">Ситх</span>
+                <h3>Дарт Вейдер</h3>
+                <p>Колишній Джедай Анакін Скайвокер, що перейшов на темний бік Сили.</p>
+              </div>
+            </div>
+
+            <div class="char-card">
+              <div class="char-card-img-wrap">
+                <img src="https://picsum.photos/seed/yoda/300/180" alt="Йода" class="img-styled" width="300" height="180">
+              </div>
+              <div class="char-card-body">
+                <span class="badge badge-yellow">Джедай</span>
+                <h3>Майстер Йода</h3>
+                <p>Гранд-майстер Ордену Джедаїв, 900 років мудрості та сили.</p>
+              </div>
+            </div>
+
+            <div class="char-card">
+              <div class="char-card-img-wrap">
+                <img src="https://picsum.photos/seed/mando/300/180" alt="Мандалорець" class="img-styled" width="300" height="180">
+              </div>
+              <div class="char-card-body">
+                <span class="badge badge-blue">Мандалорець</span>
+                <h3>Дін Джарін</h3>
+                <p>Мисливець за головами, що взяв під захист маленького Ґроґу.</p>
+              </div>
+            </div>
+
+            <div class="char-card">
+              <div class="char-card-img-wrap">
+                <img src="https://picsum.photos/seed/ahsoka2/300/180" alt="Асока Тано" class="img-styled" width="300" height="180">
+              </div>
+              <div class="char-card-body">
+                <span class="badge badge-yellow">Джедай</span>
+                <h3>Асока Тано</h3>
+                <p>Колишня учениця Анакіна Скайвокера. Один з найулюбленіших персонажів фандому.</p>
+              </div>
+            </div>
+
+            <div class="char-card">
+              <div class="char-card-img-wrap">
+                <img src="https://picsum.photos/seed/palpatine/300/180" alt="Палпатін" class="img-styled" width="300" height="180">
+              </div>
+              <div class="char-card-body">
+                <span class="badge badge-red">Ситх</span>
+                <h3>Дарт Сідіус</h3>
+                <p>Темний Лорд Ситхів та Імператор Галактичної Імперії.</p>
+              </div>
+            </div>
+
+            <div class="char-card">
+              <div class="char-card-img-wrap">
+                <img src="https://picsum.photos/seed/obivan/300/180" alt="Обі-Ван Кенобі" class="img-styled" width="300" height="180">
+              </div>
+              <div class="char-card-body">
+                <span class="badge badge-yellow">Джедай</span>
+                <h3>Обі-Ван Кенобі</h3>
+                <p>Майстер-Джедай, наставник Анакіна Скайвокера та Люка Скайвокера.</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Детальна таблиця персонажів -->
+          <div class="article-block shadow-box" style="margin-top:24px;">
+            <h3 style="margin-bottom:16px;">Порівняльна таблиця персонажів</h3>
+            <table class="wiki-table">
+              <thead>
+                <tr>
+                  <th>Персонаж</th>
+                  <th>Сторона</th>
+                  <th>Зброя</th>
+                  <th>Перше появлення</th>
+                  <th>Статус</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Дарт Вейдер</strong></td>
+                  <td><span class="badge badge-red">Темна</span></td>
+                  <td>Червоний світловий меч</td>
+                  <td>Episode IV (1977)</td>
+                  <td>Загиблий</td>
+                </tr>
+                <tr>
+                  <td><strong>Майстер Йода</strong></td>
+                  <td><span class="badge badge-yellow">Світла</span></td>
+                  <td>Зелений світловий меч</td>
+                  <td>Episode V (1980)</td>
+                  <td>Став єдиним з Силою</td>
+                </tr>
+                <tr>
+                  <td><strong>Дін Джарін</strong></td>
+                  <td><span class="badge badge-blue">Нейтральний</span></td>
+                  <td>Бластер, Темна Шабля</td>
+                  <td>The Mandalorian S1</td>
+                  <td>Живий</td>
+                </tr>
+                <tr>
+                  <td><strong>Асока Тано</strong></td>
+                  <td><span class="badge badge-yellow">Світла</span></td>
+                  <td>Два білих світлових мечі</td>
+                  <td>Clone Wars (2008)</td>
+                  <td>Живий</td>
+                </tr>
+                <tr>
+                  <td><strong>Дарт Сідіус</strong></td>
+                  <td><span class="badge badge-red">Темна</span></td>
+                  <td>Червоний меч, блискавки Сили</td>
+                  <td>Episode VI (1983)</td>
+                  <td>Загиблий</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ПЛАНЕТИ -->
+        <section class="section content-section" id="planets">
+          <h2 class="section-title">Планети та локації</h2>
+
+          <div class="planet-card">
+            <img src="https://picsum.photos/seed/tatooine/160/160" alt="Татуін" class="planet-img">
+            <div>
+              <h3>Татуін</h3>
+              <p>Пустельна планета-пустеля з двома сонцями. Рідний дім Анакіна та Люка Скайвокер.</p>
+              <p style="font-size:0.82rem; color:var(--color-muted);">
+                <strong>Система:</strong> Татоо &nbsp;|&nbsp;
+                <strong>Регіон:</strong> Зовнішній Обід &nbsp;|&nbsp;
+                <strong>Клімат:</strong> Аридний
+              </p>
+            </div>
+          </div>
+
+          <div class="planet-card">
+            <img src="https://picsum.photos/seed/coruscant/160/160" alt="Корусант" class="planet-img">
+            <div>
+              <h3>Корусант</h3>
+              <p>Планета-місто, столиця Галактичної Республіки та Імперії. Вся поверхня вкрита мегаполісом.</p>
+              <p style="font-size:0.82rem; color:var(--color-muted);">
+                <strong>Система:</strong> Корусант &nbsp;|&nbsp;
+                <strong>Регіон:</strong> Ядро &nbsp;|&nbsp;
+                <strong>Клімат:</strong> Помірний штучний
+              </p>
+            </div>
+          </div>
+
+          <div class="planet-card">
+            <img src="https://picsum.photos/seed/dagobah/160/160" alt="Дагоба" class="planet-img">
+            <div>
+              <h3>Дагоба</h3>
+              <p>Болотиста планета, де в вигнанні жив Майстер Йода. Насичена темною і світлою стороною Сили.</p>
+              <p style="font-size:0.82rem; color:var(--color-muted);">
+                <strong>Система:</strong> Дагоба &nbsp;|&nbsp;
+                <strong>Регіон:</strong> Зовнішній Обід &nbsp;|&nbsp;
+                <strong>Клімат:</strong> Тропічний
+              </p>
+            </div>
+          </div>
+
+          <div class="planet-card">
+            <img src="https://picsum.photos/seed/mandalore/160/160" alt="Мандалор" class="planet-img">
+            <div>
+              <h3>Мандалор</h3>
+              <p>Батьківщина мандалорського народу. Планета зі складною і кривавою воєнною історією.</p>
+              <p style="font-size:0.82rem; color:var(--color-muted);">
+                <strong>Система:</strong> Мандалор &nbsp;|&nbsp;
+                <strong>Регіон:</strong> Зовнішній Обід &nbsp;|&nbsp;
+                <strong>Клімат:</strong> Помірний
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ФРАКЦІЇ -->
+        <section class="section content-section" id="factions">
+          <h2 class="section-title">Фракції</h2>
+
+          <div class="article-block shadow-box">
+            <h3>Основні фракції всесвіту Star Wars</h3>
+            <p style="margin-bottom:16px; color:var(--color-muted);">
+              Галактика Star Wars налічує десятки організацій, від давніх орденів до нових режимів.
+            </p>
+
+            <!-- Нумерований список з вкладеними маркованими -->
+            <ol class="ranked-list" style="font-size:0.95rem;">
+              <li>
+                <strong>Галактична Республіка</strong> — демократичний союз тисяч планет
+                <ul>
+                  <li>Орден Джедаїв — хранителі миру</li>
+                  <li>Сенат Республіки — законодавчий орган</li>
+                  <li>Клонована армія — збройні сили</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Галактична Імперія</strong> — тоталітарна держава під керівництвом Палпатіна
+                <ul>
+                  <li>Штурмовики — піхота Імперії</li>
+                  <li>Орден Ситхів — темна сторона Сили</li>
+                  <li>Зірковий Флот — космічні сили</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Альянс Повстанців</strong> — рух опору проти Імперії
+                <ul>
+                  <li>Зоряні Пілоти — авіаційні підрозділи</li>
+                  <li>Збройний альянс — наземні війська</li>
+                </ul>
+              </li>
+              <li>
+                <strong>Мандалорці</strong> — воїнський народ зі своїм кодексом честі
+                <ul>
+                  <li>Ковенант — релігійна гілка</li>
+                  <li>Смерт-сторожа — вірні традиціям воїни</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </section>
+
+        <!-- ТЕХНІКА -->
+        <section class="section content-section" id="tech">
+          <h2 class="section-title">Техніка та зброя</h2>
+
+          <table class="wiki-table">
+            <thead>
+              <tr>
+                <th>Назва</th>
+                <th>Тип</th>
+                <th>Фракція</th>
+                <th>Опис</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Смерть Зірка</strong></td>
+                <td>Бойова станція</td>
+                <td><span class="badge badge-red">Імперія</span></td>
+                <td>Надпотужна зброя здатна знищити цілу планету</td>
+              </tr>
+              <tr>
+                <td><strong>Millennium Falcon</strong></td>
+                <td>Вантажний корабель</td>
+                <td><span class="badge badge-yellow">Повстанці</span></td>
+                <td>Найшвидший кусок мотлоху в галактиці — корабель Хана Соло</td>
+              </tr>
+              <tr>
+                <td><strong>AT-AT Walker</strong></td>
+                <td>Броньований транспорт</td>
+                <td><span class="badge badge-red">Імперія</span></td>
+                <td>Чотириногий бойовий шагохід для наземних операцій</td>
+              </tr>
+              <tr>
+                <td><strong>X-Wing Starfighter</strong></td>
+                <td>Винищувач</td>
+                <td><span class="badge badge-yellow">Повстанці</span></td>
+                <td>Основний бойовий винищувач Альянсу Повстанців</td>
+              </tr>
+              <tr>
+                <td><strong>TIE Fighter</strong></td>
+                <td>Винищувач</td>
+                <td><span class="badge badge-red">Імперія</span></td>
+                <td>Масовий винищувач Галактичної Імперії без щитів</td>
+              </tr>
+              <tr>
+                <td><strong>Razor Crest</strong></td>
+                <td>Мисливський корабель</td>
+                <td><span class="badge badge-blue">Нейтральний</span></td>
+                <td>Особистий корабель Дін Джаріна, знищений у 2 сезоні</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
+
+        <!-- ФОРМА РЕЄСТРАЦІЇ (Блок 2: форма з валідацією) -->
+        <section class="section content-section" id="contact">
+          <h2 class="section-title">Зареєструватися в спільноті</h2>
+          <p style="color:var(--color-muted); margin-bottom:24px;">
+            Приєднуйся до SWFU! Заповни форму нижче, щоб отримати доступ до форуму та ексклюзивного контенту.
+          </p>
+
+          <!-- ФОРМА З ВАЛІДАЦІЄЮ (Блок 2) -->
+          <form class="contact-form shadow-box" action="#" method="post" id="registrationForm" novalidate>
+            <h3 style="margin-bottom:24px; font-size:1.1rem;">Реєстрація учасника</h3>
+
+            <!-- Ім'я -->
+            <div class="form-group">
+              <label for="username">Нікнейм / Ім'я *</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Наприклад: JediMaster_Lviv"
+                required
+                minlength="3"
+                maxlength="30">
+            </div>
+
+            <!-- Email (Блок 2: тип email) -->
+            <div class="form-group">
+              <label for="email">Електронна пошта *</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="yourmail@example.com"
+                required>
+            </div>
+
+            <!-- Телефон (Блок 2: тип tel) -->
+            <div class="form-group">
+              <label for="phone">Телефон</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="+380XXXXXXXXX"
+                pattern="^\+380[0-9]{9}$">
+            </div>
+
+            <!-- URL (Блок 2: тип url) -->
+            <div class="form-group">
+              <label for="discord">Discord або сторінка в соцмережах (URL)</label>
+              <input
+                type="url"
+                id="discord"
+                name="discord"
+                placeholder="https://discord.gg/...">
+            </div>
+
+            <!-- Дата народження (Блок 2: datetime / date) -->
+            <div class="form-group">
+              <label for="birthdate">Дата народження *</label>
+              <input
+                type="date"
+                id="birthdate"
+                name="birthdate"
+                required
+                min="1950-01-01"
+                max="2012-12-31">
+            </div>
+
+            <!-- Улюблена фракція -->
+            <div class="form-group">
+              <label for="faction">Улюблена фракція</label>
+              <select id="faction" name="faction">
+                <option value="">— Обери фракцію —</option>
+                <option value="jedi">Орден Джедаїв</option>
+                <option value="sith">Орден Ситхів</option>
+                <option value="rebels">Альянс Повстанців</option>
+                <option value="empire">Галактична Імперія</option>
+                <option value="mandalorians">Мандалорці</option>
+              </select>
+            </div>
+
+            <!-- Повідомлення -->
+            <div class="form-group">
+              <label for="message">Розкажи про себе</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Звідки дізнався про Star Wars? Якій частині фандому належиш?"
+                maxlength="500">
+              </textarea>
+            </div>
+
+            <!-- Погодження -->
+            <div class="form-group" style="display:flex; align-items:flex-start; gap:10px;">
+              <input
+                type="checkbox"
+                id="agree"
+                name="agree"
+                required
+                style="width:auto; margin-top:3px;">
+              <label for="agree" style="text-transform:none; font-size:0.88rem; letter-spacing:0; color:var(--color-text);">
+                Погоджуюся з <a href="#">правилами спільноти</a> та обробкою персональних даних *
+              </label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+              Приєднатися до SWFU
+            </button>
+
+            <p style="margin-top:12px; font-size:0.78rem; color:var(--color-muted);">
+              * Поля обов'язкові для заповнення
+            </p>
+          </form>
+        </section>
+
+      </div><!-- /main content -->
+
+      <!-- ASIDE -->
+      <aside class="site-aside" aria-label="Бічна панель">
+
+        <div class="aside-block">
+          <h4 class="aside-title">Розділи вікі</h4>
+          <ul class="aside-list">
+            <li><a href="#characters">👤 Персонажі</a></li>
+            <li><a href="#planets">🌍 Планети</a></li>
+            <li><a href="#factions">⚔️ Фракції</a></li>
+            <li><a href="#tech">🚀 Техніка</a></li>
+          </ul>
+        </div>
+
+        <div class="aside-block">
+          <h4 class="aside-title">Найчитаніші статті</h4>
+          <ol class="ranked-list">
+            <li>
+              <strong>Дарт Вейдер</strong>
+              <ul><li>Перехід на темний бік</li></ul>
+            </li>
+            <li>
+              <strong>Орден Джедаїв</strong>
+              <ul><li>Кодекс Джедаїв</li></ul>
+            </li>
+            <li>
+              <strong>Татуін</strong>
+              <ul><li>Географія планети</li></ul>
+            </li>
+            <li><strong>Смерть Зірка</strong></li>
+            <li><strong>Мандалор</strong></li>
+          </ol>
+        </div>
+
+        <div class="aside-block">
+          <h4 class="aside-title">Нові статті</h4>
+          <ul class="aside-list">
+            <li><a href="#">Грокку (Дитинча)</a></li>
+            <li><a href="#">Орден Ковенанту</a></li>
+            <li><a href="#">Бессккар (метал)</a></li>
+          </ul>
+        </div>
+
+        <div class="aside-block">
+          <h4 class="aside-title">Приєднуйся</h4>
+          <p style="font-size:0.85rem; color:var(--color-muted); margin-bottom:12px;">
+            Допоможи нам розширити базу знань — ставай редактором вікі!
+          </p>
+          <a href="#contact" class="btn btn-primary" style="display:block; text-align:center;">Зареєструватися</a>
+        </div>
+
+      </aside>
+
+    </div>
+  </main>
+
+  <!-- ПІДВАЛ -->
+  <footer class="site-footer">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="site-logo" style="margin-bottom:12px;">
+          <div class="logo-icon">SW</div>
+          <span class="logo-text">SWFU</span>
+        </div>
+        <p>Незалежний фан-портал україномовної спільноти шанувальників всесвіту Star Wars. Не пов'язаний з Lucasfilm або The Walt Disney Company.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Навігація</h5>
+        <ul>
+          <li><a href="index.html">Головна</a></li>
+          <li><a href="news.html">Новини</a></li>
+          <li><a href="wiki.html">Енциклопедія</a></li>
+          <li><a href="index.html#forum">Форум</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Ресурси</h5>
+        <ul>
+          <li><a href="#">Вікі</a></li>
+          <li><a href="#">Мерч</a></li>
+          <li><a href="#">Партнери</a></li>
+          <li><a href="#contact">Контакти</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5>Допомога</h5>
+        <ul>
+          <li><a href="#">Правила сайту</a></li>
+          <li><a href="#">Конфіденційність</a></li>
+          <li><a href="#">FAQ</a></li>
+          <li><a href="#">Повідомити про помилку</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 SWFU — Star Wars Fan Club Ukraine. Star Wars є торговою маркою Lucasfilm Ltd.
+    </div>
+  </footer>
+
+
+<script>
+  document.querySelectorAll('.site-nav .has-dropdown > a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var parent = this.parentElement;
+      var isOpen = parent.classList.contains('open');
+
+      document.querySelectorAll('.site-nav .has-dropdown.open').forEach(function(el) {
+        el.classList.remove('open');
+      });
+
+      if (!isOpen) {
+        parent.classList.add('open');
+      }
+    });
+  });
+
+  document.addEventListener('click', function(e) {
+    if (!e.target.closest('.site-nav')) {
+      document.querySelectorAll('.site-nav .has-dropdown.open').forEach(function(el) {
+        el.classList.remove('open');
+      });
+    }
+  });
+</script>
+</body>
+</html>

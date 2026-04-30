@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Новини SWFU — останні події зі всесвіту Star Wars: фільми, серіали, відеоігри, мерч."
+    />
+    <meta
+      name="keywords"
+      content="Star Wars новини, Mandalorian, Andor, Jedi Survivor, Battlefront"
+    />
+    <meta name="author" content="SWFU — Star Wars Fan Club Ukraine" />
+    <meta name="robots" content="index, follow" />
+    <meta
+      property="og:title"
+      content="Новини — SWFU Star Wars Fan Club Ukraine"
+    />
+    <meta
+      property="og:description"
+      content="Найсвіжіші новини зі всесвіту Star Wars для україномовної спільноти"
+    />
+    <meta property="og:type" content="website" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <title>Новини — SWFU Star Wars Fan Club Ukraine</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Rajdhani:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ШАПКА -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="site-logo">
+          <div class="logo-icon">SW</div>
+          <span class="logo-text">SWFU</span>
+        </a>
+
+        <!-- НАВІГАЦІЯ з випадаючим меню -->
+        <nav class="site-nav" aria-label="Головне меню">
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+
+            <li class="has-dropdown">
+              <a href="news.html" class="active">Новини</a>
+              <ul class="dropdown">
+                <li><a href="#movies">Фільми та серіали</a></li>
+                <li><a href="#games">Відеоігри</a></li>
+                <li><a href="#merch">Мерч і колекції</a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="wiki.html">Енциклопедія</a>
+              <ul class="dropdown">
+                <li><a href="wiki.html#characters">Персонажі</a></li>
+                <li><a href="wiki.html#planets">Планети</a></li>
+                <li><a href="wiki.html#factions">Фракції</a></li>
+                <li><a href="wiki.html#tech">Техніка</a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="index.html#forum">Форум</a>
+              <ul class="dropdown">
+                <li><a href="index.html#forum">Обговорення</a></li>
+                <li><a href="index.html#forum">Пошук напарників</a></li>
+              </ul>
+            </li>
+
+            <li><a href="wiki.html#contact">Контакти</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Хлібні крихти -->
+    <nav class="breadcrumb" aria-label="Хлібні крихти">
+      <span><a href="index.html">Головна</a></span>
+      <span>Новини</span>
+    </nav>
+
+    <!-- ОСНОВНИЙ КОНТЕНТ -->
+    <main class="site-main">
+      <div class="content-with-sidebar">
+        <div>
+          <!-- ЗАГОЛОВОК СТОРІНКИ -->
+          <section class="section">
+            <h1>Новини</h1>
+            <p style="color: var(--color-muted)">
+              Найактуальніші події зі всесвіту Star Wars — фільми, серіали, ігри
+              та все для справжніх фанатів.
+            </p>
+          </section>
+
+          <!-- СЕКЦІЯ: Фільми та серіали -->
+          <section class="section content-section" id="movies">
+            <h2 class="section-title">Фільми та серіали</h2>
+
+            <!-- Головна новина з відео (Блок 2: відео) -->
+            <div class="article-block shadow-box">
+              <article>
+                <span
+                  class="badge badge-red"
+                  style="margin-bottom: 12px; display: inline-block"
+                  >Серіали</span
+                >
+                <h2 style="font-size: 1.5rem; margin-bottom: 12px">
+                  <a
+                    href="#"
+                    style="color: var(--color-text); text-decoration: none"
+                  >
+                    The Mandalorian Season 4 — офіційний трейлер
+                  </a>
+                </h2>
+                <p style="color: var(--color-muted); margin-bottom: 20px">
+                  Disney+ офіційно підтвердив вихід четвертого сезону The
+                  Mandalorian. Прем'єра запланована на
+                  <strong>осінь 2026 року</strong>. Нижче — офіційний трейлер.
+                </p>
+
+                <!-- Відео з одними елементами управління (Блок 2) -->
+                <figure style="margin-bottom: 16px">
+                  <video
+                    width="100%"
+                    height="auto"
+                    controls
+                    poster="https://picsum.photos/seed/mandalorian/800/400"
+                    style="
+                      border-radius: 6px;
+                      display: block;
+                      max-height: 400px;
+                      background: #000;
+                    "
+                  >
+                    <!-- Кілька форматів для сумісності -->
+                    <source
+                      src="video/mandalorian_s4_trailer.mp4"
+                      type="video/mp4"
+                    />
+                    <source
+                      src="video/mandalorian_s4_trailer.webm"
+                      type="video/webm"
+                    />
+                    <p
+                      style="
+                        color: var(--color-muted);
+                        padding: 20px;
+                        text-align: center;
+                      "
+                    >
+                      Ваш браузер не підтримує відтворення відео.
+                      <a href="#">Завантажити трейлер</a>
+                    </p>
+                  </video>
+                  <figcaption
+                    style="
+                      font-size: 0.82rem;
+                      color: var(--color-muted);
+                      margin-top: 8px;
+                      text-align: center;
+                    "
+                  >
+                    Офіційний трейлер The Mandalorian Season 4 © Lucasfilm /
+                    Disney+
+                  </figcaption>
+                </figure>
+
+                <!-- Аудіо (Блок 2: аудіо з тими ж елементами управління) -->
+                <div
+                  style="
+                    margin-top: 16px;
+                    padding: 16px;
+                    background: rgba(255, 232, 31, 0.04);
+                    border-radius: 4px;
+                  "
+                >
+                  <h4
+                    style="
+                      margin-bottom: 10px;
+                      font-size: 0.9rem;
+                      color: var(--color-muted);
+                    "
+                  >
+                    🎵 Саундтрек — тема Mando (Ludwig Göransson)
+                  </h4>
+                  <audio controls style="width: 100%">
+                    <source src="audio/mando_theme.mp3" type="audio/mpeg" />
+                    <source src="audio/mando_theme.ogg" type="audio/ogg" />
+                    <p style="color: var(--color-muted)">
+                      Ваш браузер не підтримує аудіо.
+                    </p>
+                  </audio>
+                </div>
+
+                <p style="margin-top: 16px">
+                  Четвертий сезон обіцяє показати повернення Дін Джаріна та
+                  Ґроґу, а також нові загрози Мандалору. Шоуранер Джон Фавро
+                  підтвердив, що цей сезон буде
+                  <em>найбільш особистим і емоційним</em> за всю серію.
+                </p>
+
+                <p>
+                  За словами продюсерів, зйомки вже завершено. Епізоди матимуть
+                  більшу тривалість, аніж у попередніх сезонах —
+                  <mark>до 50 хвилин</mark> кожен.
+                </p>
+              </article>
+            </div>
+
+            <!-- Менші новини про серіали -->
+            <div class="news-grid" style="margin-top: 20px">
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/andor/400/200"
+                    alt="Andor Season 2"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-red">Серіали</span>
+                  <h3>Andor Season 2 — огляд без спойлерів</h3>
+                  <p>
+                    Другий сезон Andor виправдав усі очікування. Найкращий Star
+                    Wars за останнє десятиліття?
+                  </p>
+                  <span class="news-card-date">20 квітня 2026</span>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/ahsoka/400/200"
+                    alt="Ahsoka Season 2"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-yellow">Серіали</span>
+                  <h3>Ahsoka Season 2 — нові деталі про сюжет</h3>
+                  <p>
+                    Стало відомо, що другий сезон Ahsoka повністю зосередиться
+                    на Зовнішній Галактиці.
+                  </p>
+                  <span class="news-card-date">15 квітня 2026</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- СЕКЦІЯ: Відеоігри -->
+          <section class="section content-section" id="games">
+            <h2 class="section-title">Відеоігри</h2>
+
+            <div class="article-block shadow-box">
+              <article>
+                <span
+                  class="badge badge-blue"
+                  style="margin-bottom: 12px; display: inline-block"
+                  >Ігри</span
+                >
+                <h2 style="font-size: 1.4rem; margin-bottom: 12px">
+                  Star Wars Jedi: Survivor — патч 2.5 вже доступний
+                </h2>
+                <p>
+                  Respawn Entertainment випустила масштабне оновлення для
+                  <strong>Star Wars Jedi: Survivor</strong>. Патч 2.5 включає
+                  нові косметичні предмети, виправлення балансу та значне
+                  покращення продуктивності на ПК.
+                </p>
+
+                <h4 style="margin-top: 16px; margin-bottom: 8px">
+                  Що нового у патчі 2.5:
+                </h4>
+                <!-- Маркований список -->
+                <ul
+                  style="
+                    list-style: disc;
+                    padding-left: 22px;
+                    color: var(--color-text);
+                    font-size: 0.95rem;
+                    line-height: 1.8;
+                  "
+                >
+                  <li>3 нові скіни для Кела Кестіса</li>
+                  <li>Новий косметичний скін для BD-1</li>
+                  <li>
+                    Покращена продуктивність на відеокартах серії RTX 4000
+                  </li>
+                  <li>Виправлено 47 критичних помилок</li>
+                  <li>Баланс бойових здібностей</li>
+                </ul>
+              </article>
+            </div>
+
+            <!-- IFRAME (Блок 2): вбудована Wiki-сторінка -->
+            <div style="margin-top: 20px">
+              <h3 style="margin-bottom: 12px">
+                Офіційний сайт Respawn Entertainment
+              </h3>
+              <p
+                style="
+                  color: var(--color-muted);
+                  font-size: 0.9rem;
+                  margin-bottom: 10px;
+                "
+              >
+                Нижче наведено вбудовану (iframe) версію офіційного сайту для
+                перегляду без переходу:
+              </p>
+              <div class="iframe-wrapper">
+                <iframe
+                  src="https://www.ea.com/games/starwars/jedi/jedi-survivor"
+                  title="Star Wars Jedi Survivor — офіційний сайт"
+                  loading="lazy"
+                  sandbox="allow-scripts allow-same-origin"
+                >
+                </iframe>
+              </div>
+              <p
+                style="
+                  font-size: 0.78rem;
+                  color: var(--color-muted);
+                  margin-top: 6px;
+                "
+              >
+                * Вбудований фрейм (iframe) — офіційний сайт EA / Respawn
+                Entertainment
+              </p>
+            </div>
+          </section>
+
+          <!-- СЕКЦІЯ: Мерч -->
+          <section class="section content-section" id="merch">
+            <h2 class="section-title">Мерч і колекції</h2>
+
+            <div class="news-grid">
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/lego1/400/200"
+                    alt="LEGO Star Wars"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-yellow">LEGO</span>
+                  <h3>LEGO UCS B-Wing — офіційний анонс</h3>
+                  <p>
+                    LEGO офіційно анонсувала новий UCS-набір B-Wing Starfighter
+                    з 2876 деталей.
+                  </p>
+                  <span class="news-card-date">18 квітня 2026</span>
+                </div>
+              </article>
+
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/blackseries/400/200"
+                    alt="Black Series"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-blue"
+                    >Black Series</span
+                  >
+                  <h3>Нові фігурки Hasbro Black Series 2026</h3>
+                  <p>
+                    Hasbro представила лінійку фігурок Black Series на цей рік —
+                    серед них Дін Джарін у нових обладунках.
+                  </p>
+                  <span class="news-card-date">10 квітня 2026</span>
+                </div>
+              </article>
+            </div>
+          </section>
+        </div>
+        <!-- /main content -->
+
+        <!-- ASIDE -->
+        <aside class="site-aside" aria-label="Бічна панель">
+          <div class="aside-block">
+            <h4 class="aside-title">Категорії новин</h4>
+            <ul class="aside-list">
+              <li><a href="#movies">📽 Фільми та серіали</a></li>
+              <li><a href="#games">🎮 Відеоігри</a></li>
+              <li><a href="#merch">🛍 Мерч і колекції</a></li>
+            </ul>
+          </div>
+
+          <div class="aside-block">
+            <h4 class="aside-title">Найпопулярніше</h4>
+            <ol class="ranked-list">
+              <li><strong>Andor S2 — огляд</strong></li>
+              <li><strong>Mandalorian S4 трейлер</strong></li>
+              <li><strong>Jedi Survivor патч 2.5</strong></li>
+              <li><strong>LEGO UCS B-Wing</strong></li>
+              <li><strong>Ahsoka S2 — деталі</strong></li>
+            </ol>
+          </div>
+
+          <div class="aside-block">
+            <h4 class="aside-title">Архів</h4>
+            <ul class="aside-list">
+              <li><a href="#">Квітень 2026</a></li>
+              <li><a href="#">Березень 2026</a></li>
+              <li><a href="#">Лютий 2026</a></li>
+              <li><a href="#">Січень 2026</a></li>
+            </ul>
+          </div>
+        </aside>
+        <!-- СЕКЦІЯ: Графік релізів (Додана Таблиця для Блоку 1) -->
+        <section class="section content-section" id="schedule">
+          <h2 class="section-title">Графік майбутніх релізів</h2>
+          <div class="article-block shadow-box" style="padding: 20px">
+            <table
+              style="
+                width: 100%;
+                border-collapse: collapse;
+                text-align: left;
+                color: var(--color-text);
+              "
+            >
+              <thead>
+                <tr
+                  style="
+                    border-bottom: 2px solid var(--color-accent);
+                    color: var(--color-accent);
+                  "
+                >
+                  <th style="padding: 12px">Дата</th>
+                  <th style="padding: 12px">Проєкт</th>
+                  <th style="padding: 12px">Тип</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="border-bottom: 1px solid #333">
+                  <td style="padding: 12px">Травень 2026</td>
+                  <td style="padding: 12px">Мандалорець і Ґроґу</td>
+                  <td style="padding: 12px">Фільм</td>
+                </tr>
+                <tr
+                  style="
+                    border-bottom: 1px solid #333;
+                    background: rgba(255, 255, 255, 0.02);
+                  "
+                >
+                  <td style="padding: 12px">Осінь 2026</td>
+                  <td style="padding: 12px">The Mandalorian Season 4</td>
+                  <td style="padding: 12px">Серіал</td>
+                </tr>
+                <tr>
+                  <td style="padding: 12px">Кінець 2026</td>
+                  <td style="padding: 12px">Star Wars: Eclipse</td>
+                  <td style="padding: 12px">Відеогра</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- СЕКЦІЯ: Форма реєстрації (Додана Форма для Блоку 2) -->
+        <section class="section content-section" id="beta-signup">
+          <h2 class="section-title">Заявка на закритий бета-тест нової гри</h2>
+          <div
+            class="article-block shadow-box"
+            style="
+              padding: 30px;
+              background: linear-gradient(135deg, #050508 0%, #16161e 100%);
+            "
+          >
+            <form
+              action="#"
+              method="POST"
+              style="display: flex; flex-direction: column; gap: 20px"
+            >
+              <div style="display: flex; flex-direction: column">
+                <label
+                  for="email"
+                  style="color: var(--color-muted); margin-bottom: 5px"
+                  >Email для зв'язку:</label
+                >
+                <!-- Поле email, атрибут required -->
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  placeholder="jedi@republic.com"
+                  style="
+                    padding: 12px;
+                    border-radius: 4px;
+                    border: 1px solid #333;
+                    background: #0d0d12;
+                    color: #fff;
+                  "
+                />
+              </div>
+
+              <div style="display: flex; flex-direction: column">
+                <label
+                  for="tel"
+                  style="color: var(--color-muted); margin-bottom: 5px"
+                  >Номер телефону:</label
+                >
+                <!-- Поле tel, атрибут pattern (валідація) -->
+                <input
+                  type="tel"
+                  id="tel"
+                  name="tel"
+                  required
+                  pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                  placeholder="099-123-4567"
+                  style="
+                    padding: 12px;
+                    border-radius: 4px;
+                    border: 1px solid #333;
+                    background: #0d0d12;
+                    color: #fff;
+                  "
+                />
+                <small style="color: #666; margin-top: 5px"
+                  >Формат: 099-123-4567</small
+                >
+              </div>
+
+              <div style="display: flex; flex-direction: column">
+                <label
+                  for="url"
+                  style="color: var(--color-muted); margin-bottom: 5px"
+                  >Посилання на ваш профіль Steam/PSN:</label
+                >
+                <!-- Поле url -->
+                <input
+                  type="url"
+                  id="url"
+                  name="url"
+                  required
+                  placeholder="https://steamcommunity.com/id/..."
+                  style="
+                    padding: 12px;
+                    border-radius: 4px;
+                    border: 1px solid #333;
+                    background: #0d0d12;
+                    color: #fff;
+                  "
+                />
+              </div>
+
+              <div style="display: flex; gap: 20px; flex-wrap: wrap">
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    min-width: 150px;
+                  "
+                >
+                  <label
+                    for="age"
+                    style="color: var(--color-muted); margin-bottom: 5px"
+                    >Ваш вік:</label
+                  >
+                  <!-- Поле number, атрибути min та max -->
+                  <input
+                    type="number"
+                    id="age"
+                    name="age"
+                    min="16"
+                    max="99"
+                    required
+                    style="
+                      padding: 12px;
+                      border-radius: 4px;
+                      border: 1px solid #333;
+                      background: #0d0d12;
+                      color: #fff;
+                    "
+                  />
+                </div>
+                <div
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    flex: 1;
+                    min-width: 150px;
+                  "
+                >
+                  <label
+                    for="time"
+                    style="color: var(--color-muted); margin-bottom: 5px"
+                    >Зручний час для гри:</label
+                  >
+                  <!-- Поле time -->
+                  <input
+                    type="time"
+                    id="time"
+                    name="time"
+                    required
+                    style="
+                      padding: 12px;
+                      border-radius: 4px;
+                      border: 1px solid #333;
+                      background: #0d0d12;
+                      color: #fff;
+                      color-scheme: dark;
+                    "
+                  />
+                </div>
+              </div>
+
+              <button
+                type="submit"
+                style="
+                  padding: 15px;
+                  background: var(--color-accent);
+                  color: #000;
+                  font-weight: bold;
+                  border: none;
+                  border-radius: 4px;
+                  cursor: pointer;
+                  margin-top: 10px;
+                  text-transform: uppercase;
+                "
+              >
+                Відправити заявку
+              </button>
+            </form>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- ПІДВАЛ -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="site-logo" style="margin-bottom: 12px">
+            <div class="logo-icon">SW</div>
+            <span class="logo-text">SWFU</span>
+          </div>
+          <p>
+            Незалежний фан-портал україномовної спільноти шанувальників всесвіту
+            Star Wars.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h5>Навігація</h5>
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="news.html">Новини</a></li>
+            <li><a href="wiki.html">Енциклопедія</a></li>
+            <li><a href="index.html#forum">Форум</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Ресурси</h5>
+          <ul>
+            <li><a href="wiki.html">Вікі</a></li>
+            <li><a href="#">Мерч</a></li>
+            <li><a href="#">Партнери</a></li>
+            <li><a href="wiki.html#contact">Контакти</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Допомога</h5>
+          <ul>
+            <li><a href="#">Правила сайту</a></li>
+            <li><a href="#">Конфіденційність</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Повідомити про помилку</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © 2026 SWFU — Star Wars Fan Club Ukraine. Star Wars є торговою маркою
+        Lucasfilm Ltd.
+      </div>
+    </footer>
+
+    <script>
+      document
+        .querySelectorAll(".site-nav .has-dropdown > a")
+        .forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var parent = this.parentElement;
+            var isOpen = parent.classList.contains("open");
+
+            document
+              .querySelectorAll(".site-nav .has-dropdown.open")
+              .forEach(function (el) {
+                el.classList.remove("open");
+              });
+
+            if (!isOpen) {
+              parent.classList.add("open");
+            }
+          });
+        });
+
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".site-nav")) {
+          document
+            .querySelectorAll(".site-nav .has-dropdown.open")
+            .forEach(function (el) {
+              el.classList.remove("open");
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
