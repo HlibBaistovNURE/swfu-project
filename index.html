@@ -1,434 +1,500 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="uk">
-<head>
-  <!-- Мета-теги -->
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="SWFU — офіційний фанклуб Star Wars в Україні. Новини, енциклопедія, форум для україномовної спільноти.">
-  <meta name="keywords" content="Star Wars, Зоряні Війни, фанклуб, Україна, SWFU, Mandalorian, Jedi">
-  <meta name="author" content="SWFU — Star Wars Fan Club Ukraine">
-  <meta name="robots" content="index, follow">
-  <meta property="og:title" content="SWFU — Star Wars Fan Club Ukraine">
-  <meta property="og:description" content="Головний сайт україномовної спільноти шанувальників всесвіту Star Wars">
-  <meta property="og:type" content="website">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <head>
+    <!-- Мета-теги -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SWFU — офіційний фанклуб Star Wars в Україні. Новини, енциклопедія, форум для україномовної спільноти."
+    />
+    <meta
+      name="keywords"
+      content="Star Wars, Зоряні Війни, фанклуб, Україна, SWFU, Mandalorian, Jedi"
+    />
+    <meta name="author" content="SWFU — Star Wars Fan Club Ukraine" />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="SWFU — Star Wars Fan Club Ukraine" />
+    <meta
+      property="og:description"
+      content="Головний сайт україномовної спільноти шанувальників всесвіту Star Wars"
+    />
+    <meta property="og:type" content="website" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <title>SWFU — Star Wars Fan Club Ukraine | Головна</title>
+    <title>SWFU — Star Wars Fan Club Ukraine | Головна</title>
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- шріфти гугла -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Rajdhani:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- Єдиний стиль для всіх сторінок -->
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-  <!-- ШАПКА (header) -->
-  <header class="site-header">
-    <div class="header-inner">
-      <a href="index.html" class="site-logo">
-        <div class="logo-icon">SW</div>
-        <span class="logo-text">SWFU</span>
-      </a>
-
-      <!-- НАВІГАЦІЯ з випадаючим меню (Блок 2) -->
-      <nav class="site-nav" aria-label="Головне меню">
-        <ul>
-          <li>
-            <a href="index.html" class="active">Головна</a>
-          </li>
-
-          <li class="has-dropdown">
-            <a href="news.html">Новини</a>
-            <ul class="dropdown">
-              <li><a href="news.html#movies">Фільми та серіали</a></li>
-              <li><a href="news.html#games">Відеоігри</a></li>
-              <li><a href="news.html#merch">Мерч і колекції</a></li>
-            </ul>
-          </li>
-
-          <li class="has-dropdown">
-            <a href="wiki.html">Енциклопедія</a>
-            <ul class="dropdown">
-              <li><a href="wiki.html#characters">Персонажі</a></li>
-              <li><a href="wiki.html#planets">Планети</a></li>
-              <li><a href="wiki.html#factions">Фракції</a></li>
-              <li><a href="wiki.html#tech">Техніка</a></li>
-            </ul>
-          </li>
-
-          <li class="has-dropdown">
-            <a href="index.html#forum">Форум</a>
-            <ul class="dropdown">
-              <li><a href="index.html#forum">Обговорення</a></li>
-              <li><a href="index.html#forum">Пошук напарників</a></li>
-            </ul>
-          </li>
-
-          <li>
-            <a href="wiki.html#contact">Контакти</a>
-          </li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO секція -->
-  <section class="hero">
-    <div class="hero-content">
-      <p class="hero-eyebrow">Україномовна спільнота</p>
-      <h1>May The Force<br>Be With You</h1>
-      <p class="hero-lead intro-lead">
-        SWFU — головний портал для українських шанувальників всесвіту
-        <mark>Star Wars</mark>. Новини, енциклопедія, форум та пошук напарників для гри.
-      </p>
-      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;">
-        <a href="news.html" class="btn btn-primary">Читати новини</a>
-        <a href="wiki.html" class="btn btn-outline">Відкрити вікі</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ХЛІБНІ КРИХТИ -->
-  <nav class="breadcrumb" aria-label="Хлібні крихти">
-    <span>Головна</span>
-  </nav>
-
-  <!-- ОСНОВНИЙ КОНТЕНТ -->
-  <main class="site-main">
-    <div class="content-with-sidebar">
-
-      <!-- Ліва частина: основний контент -->
-      <div>
-
-        <!-- СЕКЦІЯ: Останні новини -->
-        <section class="section" id="latest-news">
-          <h2 class="section-title">Останні новини</h2>
-
-          <div class="news-grid">
-
-            <!-- Картка 1 -->
-            <article class="news-card">
-              <div class="news-card-media">
-                <img
-                  src="https://picsum.photos/seed/starwars1/400/200"
-                  alt="Новини про Mandalorian Season 4"
-                  class="news-card-img img-styled"
-                  width="400" height="200">
-              </div>
-              <div class="news-card-body">
-                <span class="news-card-tag badge badge-yellow">Серіали</span>
-                <h3>The Mandalorian: сезон 4 — перші подробиці</h3>
-                <p>Disney+ підтвердив дату виходу четвертого сезону легендарного серіалу. Дін Джарін повертається.</p>
-                <span class="news-card-date">28 квітня 2026</span>
-              </div>
-            </article>
-
-            <!-- Картка 2 -->
-            <article class="news-card">
-              <div class="news-card-media">
-                <img
-                  src="https://picsum.photos/seed/starwars2/400/200"
-                  alt="Jedi Survivor оновлення"
-                  class="news-card-img img-styled"
-                  width="400" height="200">
-              </div>
-              <div class="news-card-body">
-                <span class="news-card-tag badge badge-blue">Ігри</span>
-                <h3>Star Wars Jedi: Survivor — великий патч 2.5</h3>
-                <p>Розробники випустили масштабне оновлення з новими скінами та виправленнями продуктивності.</p>
-                <span class="news-card-date">25 квітня 2026</span>
-              </div>
-            </article>
-
-            <!-- Картка 3 -->
-            <article class="news-card">
-              <div class="news-card-media">
-                <img
-                  src="https://picsum.photos/seed/starwars3/400/200"
-                  alt="Andor Season 2"
-                  class="news-card-img img-styled"
-                  width="400" height="200">
-              </div>
-              <div class="news-card-body">
-                <span class="news-card-tag badge badge-red">Фільми</span>
-                <h3>Andor Season 2 — огляд без спойлерів</h3>
-                <p>Другий сезон Andor виправдав всі очікування. Розповідаємо, чому це найкраще в Star Wars за останні роки.</p>
-                <span class="news-card-date">20 квітня 2026</span>
-              </div>
-            </article>
-
-          </div>
-        </section>
-
-        <!-- СЕКЦІЯ: Про сайт (article + section) -->
-        <section class="section" id="about">
-          <h2 class="section-title">Про SWFU</h2>
-
-          <div class="article-block shadow-box">
-            <article>
-              <h3>Наша місія</h3>
-              <p>
-                <strong>SWFU (Star Wars Fan Club Ukraine)</strong> — це єдиний інформаційний
-                та комунікаційний простір для українських шанувальників всесвіту Star Wars.
-                Ми існуємо з <em>2019 року</em> і об'єднуємо тисячі фанатів по всій країні.
-              </p>
-
-              <!-- Заголовки H4, H5, H6 -->
-              <h4>Що ми пропонуємо</h4>
-              <p>На сайті ти знайдеш актуальні новини про фільми, серіали та відеоігри,
-              зручну платформу для обговорень та пошуку напарників для онлайн-ігор.</p>
-
-              <h5>Наші переваги перед конкурентами</h5>
-              <p>На відміну від Wookieepedia або StarWars.com — у нас є інтегрований форум
-              для україномовного ком'юніті, відсутність агресивної реклами та зручна навігація.</p>
-
-              <h6>* Сайт не пов'язаний з Lucasfilm або Disney</h6>
-
-              <!-- Маркований список, вкладений у нумерований -->
-              <h4 style="margin-top:20px;">Розділи сайту</h4>
-              <ol class="ranked-list">
-                <li>
-                  <strong>Новини</strong> — найактуальніші події всесвіту
-                  <ul>
-                    <li>Фільми та серіали</li>
-                    <li>Відеоігри (Jedi Survivor, Battlefront)</li>
-                    <li>Мерч та колекції</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Енциклопедія (Wiki)</strong>
-                  <ul>
-                    <li>Персонажі — детальні профілі</li>
-                    <li>Планети та техніка</li>
-                    <li>Фракції: Республіка, Імперія, Опір</li>
-                  </ul>
-                </li>
-                <li>
-                  <strong>Форум</strong>
-                  <ul>
-                    <li>Обговорення лору</li>
-                    <li>Пошук напарників для ігор</li>
-                  </ul>
-                </li>
-              </ol>
-            </article>
-          </div>
-
-          <!-- Друга стаття -->
-          <div class="article-block shadow-box" style="margin-top:20px;">
-            <article>
-              <h3>Цільова аудиторія</h3>
-              <p>Сайт розроблено для двох основних груп користувачів:</p>
-
-              <section style="margin-top:16px; padding:16px; background:rgba(255,232,31,0.04); border-radius:4px; border-left:3px solid var(--color-accent);">
-                <h4>Група 1 — Студенти та молоді геймери</h4>
-                <p>Вік <strong>16–25 років</strong>. Цікавляться відеоіграми
-                (Jedi Survivor, Battlefront), кіберспортом, швидким пошуком напарників
-                та спілкуванням у Discord.</p>
-              </section>
-
-              <section style="margin-top:12px; padding:16px; background:rgba(79,195,247,0.04); border-radius:4px; border-left:3px solid var(--color-accent2);">
-                <h4>Група 2 — Дорослі фанати та знавці лору</h4>
-                <p>Вік <strong>26–45 років</strong>. Цінують оригінальну трилогію
-                Джорджа Лукаса, колекціонують фігурки (LEGO, Black Series),
-                читають книги розширеного всесвіту.</p>
-              </section>
-            </article>
-          </div>
-
-        </section>
-
-        <!-- СЕКЦІЯ: Форум (попередній вигляд) -->
-        <section class="section" id="forum">
-          <h2 class="section-title">Активні теми форуму</h2>
-
-          <div class="article-block shadow-box">
-            <table class="wiki-table">
-              <thead>
-                <tr>
-                  <th>Тема</th>
-                  <th>Автор</th>
-                  <th>Відповідей</th>
-                  <th>Останній пост</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><a href="#">Чи варта уваги Andor S2? Обговорення</a></td>
-                  <td>Obi_Wan_UA</td>
-                  <td>47</td>
-                  <td>Сьогодні, 14:22</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Пошук напарника для Battlefront 2 — PC</a></td>
-                  <td>JediHunter_Kyiv</td>
-                  <td>12</td>
-                  <td>Сьогодні, 11:05</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Топ-5 найкращих моментів оригінальної трилогії</a></td>
-                  <td>DarthMaul_Lviv</td>
-                  <td>83</td>
-                  <td>Вчора, 22:40</td>
-                </tr>
-                <tr>
-                  <td><a href="#">LEGO UCS Millennium Falcon — огляд набору</a></td>
-                  <td>Collector_Kharkiv</td>
-                  <td>29</td>
-                  <td>27 квіт. 2026</td>
-                </tr>
-                <tr>
-                  <td><a href="#">Jedi Survivor патч 2.5 — що нового?</a></td>
-                  <td>SithLord99</td>
-                  <td>61</td>
-                  <td>26 квіт. 2026</td>
-                </tr>
-              </tbody>
-            </table>
-            <div style="margin-top:16px;">
-              <a href="#" class="btn btn-outline">Переглянути всі теми форуму</a>
-            </div>
-          </div>
-        </section>
-
-      </div><!-- /main content -->
-
-      <!-- ASIDE: бічна панель -->
-      <aside class="site-aside" aria-label="Бічна панель">
-
-        <!-- Маркований список -->
-        <div class="aside-block">
-          <h4 class="aside-title">Популярне на форумі</h4>
-          <ul class="aside-list">
-            <li><a href="#">Найкращі сцени з Episode III</a></li>
-            <li><a href="#">Що буде в The Mandalorian S4</a></li>
-            <li><a href="#">Огляд: ЛЕГО Зоряний Руйнівник</a></li>
-            <li><a href="#">Battlefront 2 — де грати онлайн</a></li>
-            <li><a href="#">Книги: Thrawn — читати чи ні?</a></li>
-          </ul>
-        </div>
-
-        <!-- Нумерований список -->
-        <div class="aside-block">
-          <h4 class="aside-title">Топ статей Вікі</h4>
-          <ol class="ranked-list">
-            <li><strong>Дарт Вейдер</strong></li>
-            <li><strong>Йода</strong></li>
-            <li><strong>Мандалор</strong></li>
-            <li><strong>Смерть Зірка</strong></li>
-            <li><strong>Орден Джедаїв</strong></li>
-          </ol>
-        </div>
-
-        <!-- Теги -->
-        <div class="aside-block">
-          <h4 class="aside-title">Теги</h4>
-          <div style="display:flex;flex-wrap:wrap;gap:6px;">
-            <span class="badge badge-yellow">Jedi</span>
-            <span class="badge badge-red">Sith</span>
-            <span class="badge badge-blue">Mandalorian</span>
-            <span class="badge badge-yellow">Rebels</span>
-            <span class="badge badge-blue">Clone Wars</span>
-            <span class="badge badge-red">Empire</span>
-          </div>
-        </div>
-
-        <!-- Соцмережі -->
-        <div class="aside-block">
-          <h4 class="aside-title">Ми в соцмережах</h4>
-          <ul class="aside-list">
-            <li><a href="#">📘 Facebook — SWFU</a></li>
-            <li><a href="#">📸 Instagram — @swfu_ua</a></li>
-            <li><a href="#">💬 Discord — запросити</a></li>
-            <li><a href="#">▶️ YouTube — канал</a></li>
-          </ul>
-        </div>
-
-      </aside>
-
-    </div><!-- /content-with-sidebar -->
-  </main>
-
-  <!-- ПІДВАЛ (footer) -->
-  <footer class="site-footer">
-    <div class="footer-grid">
-
-      <div class="footer-brand">
-        <div class="site-logo" style="margin-bottom:12px;">
+    <!-- стиль -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- хедер -->
+    <header class="site-header">
+      <div class="header-inner">
+        <a href="index.html" class="site-logo">
           <div class="logo-icon">SW</div>
           <span class="logo-text">SWFU</span>
+        </a>
+
+        <!--нав випадаюче (Блок 2) -->
+        <nav class="site-nav" aria-label="Головне меню">
+          <ul>
+            <li>
+              <a href="index.html" class="active">Головна</a>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="news.html">Новини</a>
+              <ul class="dropdown">
+                <li><a href="news.html#movies">Фільми та серіали</a></li>
+                <li><a href="news.html#games">Відеоігри</a></li>
+                <li><a href="news.html#merch">Мерч і колекції</a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="wiki.html">Енциклопедія</a>
+              <ul class="dropdown">
+                <li><a href="wiki.html#characters">Персонажі</a></li>
+                <li><a href="wiki.html#planets">Планети</a></li>
+                <li><a href="wiki.html#factions">Фракції</a></li>
+                <li><a href="wiki.html#tech">Техніка</a></li>
+              </ul>
+            </li>
+
+            <li class="has-dropdown">
+              <a href="index.html#forum">Форум</a>
+              <ul class="dropdown">
+                <li><a href="index.html#forum">Обговорення</a></li>
+                <li><a href="index.html#forum">Пошук напарників</a></li>
+              </ul>
+            </li>
+
+            <li>
+              <a href="wiki.html#contact">Контакти</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-content">
+        <p class="hero-eyebrow">Україномовна спільнота</p>
+        <h1>May The Force<br />Be With You</h1>
+        <p class="hero-lead intro-lead">
+          SWFU — головний портал для українських шанувальників всесвіту
+          <mark>Star Wars</mark>. Новини, енциклопедія, форум та пошук
+          напарників для гри.
+        </p>
+        <div
+          style="
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <a href="news.html" class="btn btn-primary">Читати новини</a>
+          <a href="wiki.html" class="btn btn-outline">Відкрити вікі</a>
         </div>
-        <p>Незалежний фан-портал україномовної спільноти шанувальників всесвіту Star Wars. Не пов'язаний з Lucasfilm або The Walt Disney Company.</p>
       </div>
+    </section>
 
-      <div class="footer-col">
-        <h5>Навігація</h5>
-        <ul>
-          <li><a href="index.html">Головна</a></li>
-          <li><a href="news.html">Новини</a></li>
-          <li><a href="wiki.html">Енциклопедія</a></li>
-          <li><a href="index.html#forum">Форум</a></li>
-        </ul>
+    <!-- крошкі -->
+    <nav class="breadcrumb" aria-label="Хлібні крихти">
+      <span>Головна</span>
+    </nav>
+
+    <!-- мейн -->
+    <main class="site-main">
+      <div class="content-with-sidebar">
+        <!-- ліва частина: основний контент -->
+        <div>
+          <!-- ласт ньюс -->
+          <section class="section" id="latest-news">
+            <h2 class="section-title">Останні новини</h2>
+
+            <div class="news-grid">
+              <!-- Картка 1 -->
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/starwars1/400/200"
+                    alt="Новини про Mandalorian Season 4"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-yellow">Серіали</span>
+                  <h3>The Mandalorian: сезон 4 — перші подробиці</h3>
+                  <p>
+                    Disney+ підтвердив дату виходу четвертого сезону
+                    легендарного серіалу. Дін Джарін повертається.
+                  </p>
+                  <span class="news-card-date">28 квітня 2026</span>
+                </div>
+              </article>
+
+              <!-- Картка 2 -->
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/starwars2/400/200"
+                    alt="Jedi Survivor оновлення"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-blue">Ігри</span>
+                  <h3>Star Wars Jedi: Survivor — великий патч 2.5</h3>
+                  <p>
+                    Розробники випустили масштабне оновлення з новими скінами та
+                    виправленнями продуктивності.
+                  </p>
+                  <span class="news-card-date">25 квітня 2026</span>
+                </div>
+              </article>
+
+              <!-- Картка 3 -->
+              <article class="news-card">
+                <div class="news-card-media">
+                  <img
+                    src="https://picsum.photos/seed/starwars3/400/200"
+                    alt="Andor Season 2"
+                    class="news-card-img img-styled"
+                    width="400"
+                    height="200"
+                  />
+                </div>
+                <div class="news-card-body">
+                  <span class="news-card-tag badge badge-red">Фільми</span>
+                  <h3>Andor Season 2 — огляд без спойлерів</h3>
+                  <p>
+                    Другий сезон Andor виправдав всі очікування. Розповідаємо,
+                    чому це найкраще в Star Wars за останні роки.
+                  </p>
+                  <span class="news-card-date">20 квітня 2026</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <!-- Про SWFU -->
+          <section class="section" id="about">
+            <h2 class="section-title">Про SWFU</h2>
+
+            <div class="article-block shadow-box">
+              <article>
+                <h3>Наша місія</h3>
+                <p>
+                  <strong>SWFU (Star Wars Fan Club Ukraine)</strong> — це єдиний
+                  інформаційний та комунікаційний простір для українських
+                  шанувальників всесвіту Star Wars. Ми існуємо з
+                  <em>2019 року</em> і об'єднуємо тисячі фанатів по всій країні.
+                </p>
+
+                <!-- Заголовки H4, H5, H6 -->
+                <h4>Що ми пропонуємо</h4>
+                <p>
+                  На сайті ти знайдеш актуальні новини про фільми, серіали та
+                  відеоігри, зручну платформу для обговорень та пошуку
+                  напарників для онлайн-ігор.
+                </p>
+
+                <h5>Наші переваги перед конкурентами</h5>
+                <p>
+                  На відміну від Wookieepedia або StarWars.com — у нас є
+                  інтегрований форум для україномовного ком'юніті, відсутність
+                  агресивної реклами та зручна навігація.
+                </p>
+
+                <h6>* Сайт не пов'язаний з Lucasfilm або Disney</h6>
+
+                <!-- Маркований список, вкладений у нумерований -->
+                <h4 style="margin-top: 20px">Розділи сайту</h4>
+                <ol class="ranked-list">
+                  <li>
+                    <strong>Новини</strong> — найактуальніші події всесвіту
+                    <ul>
+                      <li>Фільми та серіали</li>
+                      <li>Відеоігри (Jedi Survivor, Battlefront)</li>
+                      <li>Мерч та колекції</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Енциклопедія (Wiki)</strong>
+                    <ul>
+                      <li>Персонажі — детальні профілі</li>
+                      <li>Планети та техніка</li>
+                      <li>Фракції: Республіка, Імперія, Опір</li>
+                    </ul>
+                  </li>
+                  <li>
+                    <strong>Форум</strong>
+                    <ul>
+                      <li>Обговорення лору</li>
+                      <li>Пошук напарників для ігор</li>
+                    </ul>
+                  </li>
+                </ol>
+              </article>
+            </div>
+
+            <!-- стаття 2 -->
+            <div class="article-block shadow-box" style="margin-top: 20px">
+              <article>
+                <h3>Цільова аудиторія</h3>
+                <p>Сайт розроблено для двох основних груп користувачів:</p>
+
+                <section
+                  style="
+                    margin-top: 16px;
+                    padding: 16px;
+                    background: rgba(255, 232, 31, 0.04);
+                    border-radius: 4px;
+                    border-left: 3px solid var(--color-accent);
+                  "
+                >
+                  <h4>Група 1 — Студенти та молоді геймери</h4>
+                  <p>
+                    Вік <strong>16–25 років</strong>. Цікавляться відеоіграми
+                    (Jedi Survivor, Battlefront), кіберспортом, швидким пошуком
+                    напарників та спілкуванням у Discord.
+                  </p>
+                </section>
+
+                <section
+                  style="
+                    margin-top: 12px;
+                    padding: 16px;
+                    background: rgba(79, 195, 247, 0.04);
+                    border-radius: 4px;
+                    border-left: 3px solid var(--color-accent2);
+                  "
+                >
+                  <h4>Група 2 — Дорослі фанати та знавці лору</h4>
+                  <p>
+                    Вік <strong>26–45 років</strong>. Цінують оригінальну
+                    трилогію Джорджа Лукаса, колекціонують фігурки (LEGO, Black
+                    Series), читають книги розширеного всесвіту.
+                  </p>
+                </section>
+              </article>
+            </div>
+          </section>
+
+          <!-- форум -->
+          <section class="section" id="forum">
+            <h2 class="section-title">Активні теми форуму</h2>
+
+            <div class="article-block shadow-box">
+              <table class="wiki-table">
+                <thead>
+                  <tr>
+                    <th>Тема</th>
+                    <th>Автор</th>
+                    <th>Відповідей</th>
+                    <th>Останній пост</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                      <a href="#">Чи варта уваги Andor S2? Обговорення</a>
+                    </td>
+                    <td>Obi_Wan_UA</td>
+                    <td>47</td>
+                    <td>Сьогодні, 14:22</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="#">Пошук напарника для Battlefront 2 — PC</a>
+                    </td>
+                    <td>JediHunter_Kyiv</td>
+                    <td>12</td>
+                    <td>Сьогодні, 11:05</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="#"
+                        >Топ-5 найкращих моментів оригінальної трилогії</a
+                      >
+                    </td>
+                    <td>DarthMaul_Lviv</td>
+                    <td>83</td>
+                    <td>Вчора, 22:40</td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <a href="#">LEGO UCS Millennium Falcon — огляд набору</a>
+                    </td>
+                    <td>Collector_Kharkiv</td>
+                    <td>29</td>
+                    <td>27 квіт. 2026</td>
+                  </tr>
+                  <tr>
+                    <td><a href="#">Jedi Survivor патч 2.5 — що нового?</a></td>
+                    <td>SithLord99</td>
+                    <td>61</td>
+                    <td>26 квіт. 2026</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div style="margin-top: 16px">
+                <a href="#" class="btn btn-outline"
+                  >Переглянути всі теми форуму</a
+                >
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <!-- ASIDE панель з боку -->
+        <aside class="site-aside" aria-label="Бічна панель">
+          <!-- Марксписок -->
+          <div class="aside-block">
+            <h4 class="aside-title">Популярне на форумі</h4>
+            <ul class="aside-list">
+              <li><a href="#">Найкращі сцени з Episode III</a></li>
+              <li><a href="#">Що буде в The Mandalorian S4</a></li>
+              <li><a href="#">Огляд: ЛЕГО Зоряний Руйнівник</a></li>
+              <li><a href="#">Battlefront 2 — де грати онлайн</a></li>
+              <li><a href="#">Книги: Thrawn — читати чи ні?</a></li>
+            </ul>
+          </div>
+
+          <!-- Нум список -->
+          <div class="aside-block">
+            <h4 class="aside-title">Топ статей Вікі</h4>
+            <ol class="ranked-list">
+              <li><strong>Дарт Вейдер</strong></li>
+              <li><strong>Йода</strong></li>
+              <li><strong>Мандалор</strong></li>
+              <li><strong>Смерть Зірка</strong></li>
+              <li><strong>Орден Джедаїв</strong></li>
+            </ol>
+          </div>
+
+          <!-- Теги -->
+          <div class="aside-block">
+            <h4 class="aside-title">Теги</h4>
+            <div style="display: flex; flex-wrap: wrap; gap: 6px">
+              <span class="badge badge-yellow">Jedi</span>
+              <span class="badge badge-red">Sith</span>
+              <span class="badge badge-blue">Mandalorian</span>
+              <span class="badge badge-yellow">Rebels</span>
+              <span class="badge badge-blue">Clone Wars</span>
+              <span class="badge badge-red">Empire</span>
+            </div>
+          </div>
+
+          <!-- Соцмережі -->
+          <div class="aside-block">
+            <h4 class="aside-title">Ми в соцмережах</h4>
+            <ul class="aside-list">
+              <li><a href="#">📘 Facebook — SWFU</a></li>
+              <li><a href="#">📸 Instagram — @swfu_ua</a></li>
+              <li><a href="#">💬 Discord — запросити</a></li>
+              <li><a href="#">▶️ YouTube — канал</a></li>
+            </ul>
+          </div>
+        </aside>
       </div>
+    </main>
 
-      <div class="footer-col">
-        <h5>Ресурси</h5>
-        <ul>
-          <li><a href="wiki.html">Вікі</a></li>
-          <li><a href="#">Мерч</a></li>
-          <li><a href="#">Партнери</a></li>
-          <li><a href="wiki.html#contact">Контакти</a></li>
-        </ul>
+    <!-- футер -->
+    <footer class="site-footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="site-logo" style="margin-bottom: 12px">
+            <div class="logo-icon">SW</div>
+            <span class="logo-text">SWFU</span>
+          </div>
+          <p>
+            Незалежний фан-портал україномовної спільноти шанувальників всесвіту
+            Star Wars. Не пов'язаний з Lucasfilm або The Walt Disney Company.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h5>Навігація</h5>
+          <ul>
+            <li><a href="index.html">Головна</a></li>
+            <li><a href="news.html">Новини</a></li>
+            <li><a href="wiki.html">Енциклопедія</a></li>
+            <li><a href="index.html#forum">Форум</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ресурси</h5>
+          <ul>
+            <li><a href="wiki.html">Вікі</a></li>
+            <li><a href="#">Мерч</a></li>
+            <li><a href="#">Партнери</a></li>
+            <li><a href="wiki.html#contact">Контакти</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Допомога</h5>
+          <ul>
+            <li><a href="#">Правила сайту</a></li>
+            <li><a href="#">Конфіденційність</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Повідомити про помилку</a></li>
+          </ul>
+        </div>
       </div>
-
-      <div class="footer-col">
-        <h5>Допомога</h5>
-        <ul>
-          <li><a href="#">Правила сайту</a></li>
-          <li><a href="#">Конфіденційність</a></li>
-          <li><a href="#">FAQ</a></li>
-          <li><a href="#">Повідомити про помилку</a></li>
-        </ul>
+      <div class="footer-bottom">
+        2026 SWFU — Star Wars Fan Club Ukraine. Усі права захищені. Star Wars є
+        торговою маркою Lucasfilm Ltd.
       </div>
+    </footer>
 
-    </div>
-    <div class="footer-bottom">
-      © 2026 SWFU — Star Wars Fan Club Ukraine. Усі права захищені.
-      Star Wars є торговою маркою Lucasfilm Ltd.
-    </div>
-  </footer>
+    <script>
+      // откривать закривать по кліку
+      document
+        .querySelectorAll(".site-nav .has-dropdown > a")
+        .forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+            var parent = this.parentElement;
+            var isOpen = parent.classList.contains("open");
+            document
+              .querySelectorAll(".site-nav .has-dropdown.open")
+              .forEach(function (el) {
+                el.classList.remove("open");
+              });
+            if (!isOpen) {
+              parent.classList.add("open");
+            }
+          });
+        });
 
-
-<script>
-  // Dropdown: відкривати/закривати по кліку, закривати при кліку поза меню
-  document.querySelectorAll('.site-nav .has-dropdown > a').forEach(function(link) {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      var parent = this.parentElement;
-      var isOpen = parent.classList.contains('open');
-
-      // Закрити всі інші відкриті підменю
-      document.querySelectorAll('.site-nav .has-dropdown.open').forEach(function(el) {
-        el.classList.remove('open');
+      // меню закривать
+      document.addEventListener("click", function (e) {
+        if (!e.target.closest(".site-nav")) {
+          document
+            .querySelectorAll(".site-nav .has-dropdown.open")
+            .forEach(function (el) {
+              el.classList.remove("open");
+            });
+        }
       });
-
-      // Якщо це підменю було закрите — відкрити його
-      if (!isOpen) {
-        parent.classList.add('open');
-      }
-    });
-  });
-
-  // Закривати підменю при кліку за межами навігації
-  document.addEventListener('click', function(e) {
-    if (!e.target.closest('.site-nav')) {
-      document.querySelectorAll('.site-nav .has-dropdown.open').forEach(function(el) {
-        el.classList.remove('open');
-      });
-    }
-  });
-</script>
-</body>
+    </script>
+  </body>
 </html>
